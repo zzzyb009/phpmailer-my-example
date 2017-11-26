@@ -15,15 +15,15 @@ try {
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.163.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'zzzyinbin@163.com';                // SMTP username
-    $mail->Password = '123qweasd';                        // SMTP password
+    $mail->Username = 'your_mail@163.com';                // SMTP username
+    $mail->Password = 'your_mail_passwd';                        // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('zzzyinbin@163.com', 'Mailer');
-    $mail->addAddress('1455519909@qq.com');               // Name is optional
-    $mail->addReplyTo('1455519909@qq.com', 'Information');
+    $mail->setFrom('your_mail@163.com', 'Mailer');
+    $mail->addAddress('send_to@163.com');               // Name is optional
+    $mail->addReplyTo('send_to@163.com', 'Information');
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
