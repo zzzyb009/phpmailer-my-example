@@ -4,10 +4,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-//Load composer's autoloader
 require './phpmailer/src/SMTP.php';
-// require './phpmailer/src/OAuth.php';
-// require './phpmailer/src/POP3.php';
 require './phpmailer/src/PHPMailer.php';
 require './phpmailer/src/Exception.php';
 
@@ -16,24 +13,20 @@ try {
     //Server settings
     $mail->SMTPDebug = 1;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.163.com';  // Specify main and backup SMTP servers
+    $mail->Host = 'smtp.example.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'zzzyinbin@163.com';                 // SMTP username
-    $mail->Password = '123qweasd';                           // SMTP password
+    $mail->Username = 'your_mail@example.com';                 // SMTP username
+    $mail->Password = 'your_passwd';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('zzzyinbin@163.com', 'Mailer');
-    // $mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
-    $mail->addAddress('1455519909@qq.com');               // Name is optional
-    $mail->addReplyTo('1455519909@qq.com', 'Information');
-    // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
+    $mail->setFrom('your_mail@example.com', 'Mailer');
+    $mail->addAddress('send_to@example.net', 'Joe User');     // Add a recipient
 
     //Attachments
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+    $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
