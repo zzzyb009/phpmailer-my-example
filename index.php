@@ -13,7 +13,7 @@ try {
     //Server settings
     $mail->SMTPDebug = 1;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.163.com';  // Specify main and backup SMTP servers
+    $mail->Host = 'smtp.example.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'your_mail@163.com';                // SMTP username
     $mail->Password = 'your_mail_passwd';                        // SMTP password
